@@ -493,6 +493,14 @@ reached at http://localhost:8080/.
 In order to use another port, change the `ports` parameter
 inside `docker-compose.yml` to `8888:8080`, where 8888 is a port of your choice.
 
+### Sprint contribution note (Deploy and configure FHIR server)
+
+For the deployment/configuration task in our practicum sprint, we used this repository directly and brought up the server with Docker Compose:
+
+1. Start Docker Desktop and run `docker compose up -d`.
+2. If `8080` is already in use, update the compose port mapping (for example `8081:8080`) and rerun `docker compose up -d`.
+3. Verify the server with `http://localhost:8081/fhir/metadata` (or your mapped host port) and confirm a `CapabilityStatement` response.
+
 The docker compose set also includes PostgreSQL database, if you choose to use PostgreSQL instead of H2, change the following
 properties in `src/main/resources/application.yaml`:
 
